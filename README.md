@@ -83,14 +83,14 @@ just check      # lint + format-check + typecheck + test (mirrors CI)
 │   ├── workflows/ci.yml    # CI pipeline
 │   ├── ISSUE_TEMPLATE/
 │   ├── PULL_REQUEST_TEMPLATE.md
+│   ├── CONTRIBUTING.md
+│   ├── SECURITY.md
 │   └── dependabot.yml
 ├── .pre-commit-config.yaml
 ├── .editorconfig           # editor-agnostic formatting
 ├── .gitlint                # Conventional Commits config
 ├── .yamllint.yaml
 ├── justfile                # task runner
-├── CONTRIBUTING.md
-├── SECURITY.md
 ├── pyproject.toml          # single source of truth (ruff, mypy, pytest, coverage)
 └── uv.lock
 ```
