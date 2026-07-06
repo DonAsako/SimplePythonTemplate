@@ -7,7 +7,7 @@ name = "app"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [{ name = "DonAsako", email = "asako@donasako.fr" }]
+authors = [{ name = "DonAsako", email = "contact@donasako.fr" }]
 requires-python = ">=3.13"
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
@@ -22,14 +22,12 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-dependencies = [
-    "pydantic>=2.13.4",
-]
+dependencies = ["pydantic>=2.13.4"]
 
 [project.urls]
 Homepage   = "https://donasako.fr/"
-Repository = "https://github.com/DonAsako/python-project-template"
-Issues     = "https://github.com/DonAsako/python-project-template/issues"
+Repository = "https://github.com/DonAsako/SimplePythonTemplate"
+Issues     = "https://github.com/DonAsako/SimplePythonTemplate/issues"
 
 [project.scripts]
 app-cli = "app.main:main"
