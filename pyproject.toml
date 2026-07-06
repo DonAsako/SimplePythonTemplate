@@ -96,7 +96,7 @@ ignore = [
     # ---- Logging ----
     "G003", # logging-string-concat
     "G004", # logging-f-string
-    # ---- Bandit (relaxed for a CTF project) ----
+    # ---- Bandit ----
     "S311", # suspicious-non-cryptographic-random
     "S101", # assert
     # ---- Performance (often noisy) ----
