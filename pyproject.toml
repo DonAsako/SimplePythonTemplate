@@ -9,13 +9,13 @@ description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "DonAsako", email = "contact@donasako.fr" }]
 requires-python = ">=3.13"
-license = "GPL-3.0-or-later"
+license = "MIT"
 license-files = ["LICENSE"]
 keywords = []
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
@@ -53,6 +53,8 @@ dev = [
     # Type stubs
     "types-requests",
     "types-jsonschema",
+    "types-toml",
+    "pydantic-settings",
 ]
 
 # ============================================================================
@@ -64,6 +66,8 @@ include = ["app"]
 
 [tool.hatch.build.targets.wheel]
 include = ["app"]
+# Ship the PEP 561 marker so downstream consumers get our type hints
+artifacts = ["app/py.typed"]
 
 # ============================================================================
 # RUFF (linter + formatter)
@@ -340,6 +344,7 @@ omit     = ["**/*_test.py", "**/test_*.py", "**/tests/**"]
 precision = 2
 show_missing = true
 skip_covered = false
+fail_under = 80
 exclude_lines = [
     "pragma: no cover",
     "raise NotImplementedError",

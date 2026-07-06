@@ -1,5 +1,9 @@
 # Python Project Template
 
+[![CI](https://github.com/DonAsako/SimplePythonTemplate/actions/workflows/ci.yml/badge.svg)](https://github.com/DonAsako/SimplePythonTemplate/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 A professional, batteries-included template for Python projects.
 
 Click **"Use this template"** on GitHub to bootstrap a new repository.
@@ -18,6 +22,8 @@ Click **"Use this template"** on GitHub to bootstrap a new repository.
 | [yamllint](https://yamllint.readthedocs.io/) | YAML linting |
 | [mdformat](https://mdformat.readthedocs.io/) | Markdown formatting |
 | [gitleaks](https://github.com/gitleaks/gitleaks) | Secret detection |
+| [GitHub Actions](.github/workflows/ci.yml) | CI: lint, type-check, tests on every push/PR |
+| [just](https://github.com/casey/just) | Task runner for common dev commands (optional) |
 
 ## Requirements
 
@@ -53,18 +59,38 @@ uv run pytest            # tests
 uv run pytest --cov      # tests with coverage
 ```
 
+With [`just`](https://github.com/casey/just) installed, the same workflows are shortcuts:
+
+```sh
+just            # list all recipes
+just run        # run the entry point
+just fix        # auto-fix lint + format
+just check      # lint + format-check + typecheck + test (mirrors CI)
+```
+
 ## Layout
 
 ```text
 .
 ├── app/                    # source package
 │   ├── __init__.py
-│   └── main.py
+│   ├── main.py
+│   └── py.typed            # PEP 561 marker (ships type hints to consumers)
 ├── tests/
 │   └── unit/
+│       └── test_main.py
+├── .github/
+│   ├── workflows/ci.yml    # CI pipeline
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── dependabot.yml
 ├── .pre-commit-config.yaml
+├── .editorconfig           # editor-agnostic formatting
 ├── .gitlint                # Conventional Commits config
 ├── .yamllint.yaml
+├── justfile                # task runner
+├── CONTRIBUTING.md
+├── SECURITY.md
 ├── pyproject.toml          # single source of truth (ruff, mypy, pytest, coverage)
 └── uv.lock
 ```
@@ -83,4 +109,4 @@ Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `buil
 
 ## License
 
-[GPL-3.0-or-later](LICENSE)
+[MIT](LICENSE)
