@@ -40,7 +40,7 @@ dev = [
     "yamllint",
     "mdformat",
     "gitlint",
-    "pre-commit>=4.6.1",
+    "pre-commit>=4.6.2",
     # Tests
     "pytest",
     "pytest-cov",
