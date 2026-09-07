@@ -22,7 +22,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-dependencies = ["pydantic>=2.13.4"]
+dependencies = ["pydantic>=2.13.5"]
 
 [project.urls]
 Homepage   = "https://donasako.fr/"
@@ -40,7 +40,7 @@ dev = [
     "yamllint",
     "mdformat",
     "gitlint",
-    "pre-commit>=4.6.1",
+    "pre-commit>=4.6.2",
     # Tests
     "pytest",
     "pytest-cov",
